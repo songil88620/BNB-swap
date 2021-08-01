@@ -425,7 +425,7 @@ contract Babybnb is Context, IERC20, Ownable {
     using SafeMath for uint256;
     using Address for address;
     
-    address payable public marketingAddress = payable(0x3bfC545BdE045e3eef6Ce2e75928946D7C5591f8); // Marketing Address
+    address payable public marketingAddress = payable(0x3bfC545BdE045e3eef6Ce2e75928946D7C5591f8); // Marketing Address  //changed
     address public immutable deadAddress = 0x000000000000000000000000000000000000dEaD;
     mapping (address => uint256) private _rOwned;
     mapping (address => uint256) private _tOwned;
@@ -449,12 +449,12 @@ contract Babybnb is Context, IERC20, Ownable {
     uint256 public _taxFee = 2;
     uint256 private _previousTaxFee = _taxFee;
     
-    uint256 public _liquidityFee = 8;
+    uint256 public _liquidityFee = 8;                             ////////////
     uint256 private _previousLiquidityFee = _liquidityFee;
     
-    uint256 public marketingDivisor = 3;
+    uint256 public marketingDivisor = 3;                         //changed
     
-    uint256 public _maxTxAmount = 3000000 * 10**6 * 10**9;
+    uint256 public _maxTxAmount = 3000000 * 10**6 * 10**9;              ///changed
     uint256 private minimumTokensBeforeSwap = 200000 * 10**6 * 10**9; 
     uint256 private buyBackUpperLimit = 1 * 10**18;
 
@@ -462,8 +462,8 @@ contract Babybnb is Context, IERC20, Ownable {
     address public immutable uniswapV2Pair;
     
     bool inSwapAndLiquify;
-    bool public swapAndLiquifyEnabled = false;
-    bool public buyBackEnabled = true;
+    bool public swapAndLiquifyEnabled = false;                   //////////// if true 
+    bool public buyBackEnabled = true;                          ///changed
 
     
     event RewardLiquidityProviders(uint256 tokenAmount);
@@ -570,7 +570,7 @@ contract Babybnb is Context, IERC20, Ownable {
         return minimumTokensBeforeSwap;
     }
     
-    function buyBackUpperLimitAmount() public view returns (uint256) {
+    function buyBackUpperLimitAmount() public view returns (uint256) {                      /////
         return buyBackUpperLimit;
     }
     
